@@ -3,10 +3,8 @@ package com.rorpheeyah.androidkotlinbaseproject.util.dialog
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.Window
-import android.view.WindowInsets
 import android.view.WindowManager
 import com.bumptech.glide.Glide
 import com.rorpheeyah.androidkotlinbaseproject.R
@@ -25,16 +23,12 @@ class LoadingDialog(private val mContext: Context, private val scope: CoroutineS
 
                 progress = Dialog(mContext)
                 progress!!.window?.requestFeature(Window.FEATURE_NO_TITLE)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    progress!!.window?.insetsController?.hide(WindowInsets.Type.statusBars())
-                } else {
-                    progress!!.window?.setFlags(
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN
-                    )
-                }
+                progress!!.window?.setFlags(
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN
+                )
                 progress!!.setContentView(loadingView)
-                progress!!.setCanceledOnTouchOutside(false)
+                progress!!.setCanceledOnTouchOutside(true)
             }
             progress!!.show()
         }

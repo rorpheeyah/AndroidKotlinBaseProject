@@ -19,7 +19,7 @@ import kotlinx.coroutines.cancel
  * @author Matt Dev
  * @since 2021.02.05
  */
-open class BaseViewModel() : ViewModel(){
+open class BaseViewModel : ViewModel(){
     val loadingMLD: MutableLiveData<Boolean> = MutableLiveData()
     val commonMessage: MutableLiveData<String> = MutableLiveData()
     val dataLoaded: MutableLiveData<Boolean> = MutableLiveData()
