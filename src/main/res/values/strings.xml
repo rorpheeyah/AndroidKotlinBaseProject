@@ -1,0 +1,7 @@
+<resources>
+    <!-- Biometric prompt attributes -->
+    <string name="prompt_title">Biometric Authentication</string>
+    <string name="prompt_subtitle">Authentication is required to continue</string>
+    <string name="prompt_description">This app uses biometric authentication to protect your data.</string>
+    <string name="prompt_negative_text">Cancel</string>
+</resources>
